@@ -35,18 +35,10 @@ fetch('https://api.github.com/users/simmo75/repos', {
   })
   .then(function (data) {
     for (let i of data) {
-      console.log(i.url)
+      // console.log(i.url)}
+      let reposDiv = document.createElement('div')
+      reposDiv.classList.add('repos')
+      reposDiv.innerHTML = '<a href="' + i.html_url + '">' + i.name + '</a>'
+      profileDiv.appendChild(reposDiv)
     }
   })
-//   const repo1Box = document.createElement("div");
-//   repo1Box.classList.add("repo-box");
-//   moreInfoBox.appendChild(repo1Box);
-
-//   const repo1 = document.createElement("p");
-//   repo1.innerHTML =
-//     '<a href="' +
-//     repos[2].html_url +
-//     '">' +
-//     "Customer Directory Project" +
-//     "</a>";
-//   repo1Box.appendChild(repo1);
